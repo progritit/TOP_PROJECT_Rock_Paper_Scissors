@@ -4,6 +4,7 @@
     padding: 0;
 }
 
+/* Central color system for keeping the solarpunk theme consistent. */
 :root {
     --dark-green: #082d28;
     --medium-green: #1f6f44;
@@ -21,6 +22,8 @@ body {
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--white);
+
+    /* Dark overlay improves contrast between the background art and the UI. */
     background:
         linear-gradient(rgba(4, 39, 35, 0.15), rgba(4, 39, 35, 0.4)),
         url("./images/rps_background.png") center / cover no-repeat fixed;
@@ -30,6 +33,7 @@ button {
     font: inherit;
 }
 
+/* Full-page wrapper used to center the game panel on the screen. */
 .page {
     min-height: 100vh;
     display: flex;
@@ -38,6 +42,7 @@ button {
     padding: 32px;
 }
 
+/* Main visual panel that holds the whole game UI together. */
 .game-container {
     width: min(1100px, 100%);
     padding: 24px;
@@ -55,6 +60,7 @@ button {
     overflow: hidden;
 }
 
+/* Adds soft decorative lighting without needing extra HTML elements. */
 .game-container::before {
     content: "";
     position: absolute;
@@ -66,6 +72,7 @@ button {
     pointer-events: none;
 }
 
+/* Keeps real UI content above the decorative ::before layer. */
 .game-header,
 .message-banner,
 .battle-area,
@@ -99,6 +106,8 @@ button {
 .logo {
     width: 58px;
     height: 58px;
+
+    /* Keeps the full logo visible without stretching or cropping it. */
     object-fit: contain;
 }
 
@@ -121,6 +130,7 @@ button {
     gap: 12px;
 }
 
+/* Shared card styling for score and round panels. */
 .score-card,
 .round-card {
     min-width: 125px;
@@ -165,6 +175,7 @@ button {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
 }
 
+/* Gold styling separates the round counter from the player scores. */
 .round-card {
     justify-self: end;
     background: linear-gradient(180deg, #b99234, #695018);
@@ -201,6 +212,7 @@ button {
     letter-spacing: 1px;
 }
 
+/* Grid layout keeps player and AI choices balanced side by side. */
 .battle-area {
     min-height: 250px;
     display: grid;
@@ -210,6 +222,7 @@ button {
     padding: 34px clamp(18px, 7vw, 90px);
 }
 
+/* Decorative animated ring that gives the battle area a game-like focal point. */
 .energy-ring {
     position: absolute;
     left: 8%;
@@ -225,6 +238,7 @@ button {
     animation: glowRing 2.6s ease-in-out infinite;
 }
 
+/* Small pulse animation adds movement without needing JavaScript. */
 @keyframes glowRing {
 
     0%,
@@ -267,6 +281,7 @@ button {
     text-shadow: 0 0 14px rgba(169, 255, 255, 0.8);
 }
 
+/* Three-column layout matches the Rock / Paper / Scissors choice pattern. */
 .buttons-area {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -288,6 +303,7 @@ button {
     transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
 }
 
+/* Hover and active states make the buttons feel interactive. */
 .move-button:hover {
     transform: translateY(-8px);
     filter: brightness(1.12);
@@ -297,6 +313,7 @@ button {
     transform: translateY(-2px) scale(0.98);
 }
 
+/* Visible keyboard focus keeps the game usable without a mouse. */
 .move-button:focus-visible,
 .reset-button:focus-visible {
     outline: 4px solid white;
@@ -307,7 +324,10 @@ button {
     display: block;
     width: min(150px, 75%);
     height: 140px;
+
+    /* Shows the whole icon inside a fixed image area without distortion. */
     object-fit: contain;
+
     margin: 0 auto 16px;
     filter: drop-shadow(0 12px 14px rgba(0, 0, 0, 0.35));
 }
@@ -327,6 +347,7 @@ button {
     font-weight: bold;
 }
 
+/* Each move gets its own accent color for quick visual recognition. */
 .rock-button {
     background: linear-gradient(180deg, rgba(210, 164, 58, 0.9), rgba(97, 73, 22, 0.94));
     border-color: rgba(255, 224, 112, 0.95);
@@ -389,6 +410,7 @@ button {
     filter: brightness(1.08);
 }
 
+/* Disabled state makes it clear the match is over. */
 .move-button:disabled {
     cursor: not-allowed;
     opacity: 0.55;
@@ -400,6 +422,7 @@ button {
     color: #fff3a6;
 }
 
+/* Tablet layout: stack the header and buttons to avoid cramped content. */
 @media (max-width: 900px) {
     .page {
         padding: 18px;
@@ -450,6 +473,7 @@ button {
     }
 }
 
+/* Small-screen adjustments for better spacing and readability. */
 @media (max-width: 520px) {
     .score-area {
         flex-wrap: wrap;
@@ -476,9 +500,10 @@ button {
     .site-footer {
         font-size: 0.78rem;
         padding-inline: 14px;
-        }
+    }
 }
 
+/* Project footer reuses the same pill style as the rules footer. */
 .site-footer {
     position: relative;
     z-index: 1;

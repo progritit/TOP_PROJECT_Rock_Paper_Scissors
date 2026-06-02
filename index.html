@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +12,9 @@
 
 <body>
     <main class="page">
+        <!-- Main game shell: groups the full UI into one styled panel. -->
         <section class="game-container">
+            <!-- Header keeps the brand, score, and round info visible at all times. -->
             <header class="game-header">
                 <div class="logo-area">
                     <img src="./images/rps_splogo.png" alt="Solar RPS logo" class="logo">
@@ -21,6 +24,7 @@
                     </div>
                 </div>
 
+                <!-- Score values use IDs because JavaScript updates them after each round. -->
                 <div class="score-area">
                     <div class="score-card">
                         <span>Player</span>
@@ -41,11 +45,14 @@
                 </div>
             </header>
 
+            <!-- Dynamic message area for instructions, round results, and final game result. -->
             <div class="message-banner">
                 <p id="game-message">Choose your move!</p>
             </div>
 
+            <!-- Shows the current round choices separately from the clickable move buttons. -->
             <section class="battle-area">
+                <!-- Decorative element styled in CSS to create the futuristic ring effect. -->
                 <div class="energy-ring"></div>
 
                 <article class="choice-panel">
@@ -59,7 +66,9 @@
                 </article>
             </section>
 
+            <!-- aria-label gives this button group an accessible name without adding a visible heading. -->
             <section class="buttons-area" aria-label="Choose your move">
+                <!-- data-choice lets one JavaScript click handler read which move was selected. -->
                 <button class="move-button rock-button" data-choice="rock">
                     <img src="./images/rps_rockbutton.png" alt="Rock">
                     <span>Rock</span>
@@ -79,11 +88,14 @@
                 </button>
             </section>
 
+            <!-- Keeps the rules visible so the player does not need to remember them. -->
             <footer class="rules-footer">
                 <p>Rock beats Scissors • Scissors beats Paper • Paper beats Rock</p>
             </footer>
 
             <button id="reset-button" class="reset-button">Reset Game</button>
+
+            <!-- The year span is filled by JavaScript so the footer stays current automatically. -->
             <footer class="site-footer">
                 <p>
                     Copyright © Clebson Design
@@ -96,3 +108,4 @@
 </body>
 
 </html>
+```
