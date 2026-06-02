@@ -1,4 +1,4 @@
-```css * {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -472,4 +472,36 @@ button {
     .rules-footer {
         font-size: 0.85rem;
     }
+
+    .site-footer {
+        font-size: 0.78rem;
+        padding-inline: 14px;
+        }
+}
+
+.site-footer {
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    max-width: 100%;
+    margin: 18px auto 0;
+    padding: 10px 22px;
+    border-radius: 999px;
+    color: #efffc7;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(3, 36, 32, 0.78);
+    border: 1px solid rgba(155, 230, 109, 0.38);
+    box-shadow:
+        0 0 14px rgba(101, 255, 154, 0.18),
+        inset 0 0 12px rgba(255, 255, 255, 0.06);
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+#copyright-year {
+    color: var(--gold);
 }

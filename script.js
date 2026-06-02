@@ -18,6 +18,7 @@ const humanChoiceDisplay = document.querySelector("#human-choice-display");
 const computerChoiceDisplay = document.querySelector("#computer-choice-display");
 const moveButtons = document.querySelectorAll(".move-button");
 const resetButton = document.querySelector("#reset-button");
+const copyrightYearElement = document.querySelector("#copyright-year");
 
 function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * moves.length);
@@ -184,10 +185,16 @@ function resetGame() {
     updateDisplay();
 }
 
+function setCopyrightYear() {
+    const currentYear = new Date().getFullYear();
+    copyrightYearElement.textContent = currentYear;
+}
+
 moveButtons.forEach((button) => {
     button.addEventListener("click", handleMoveClick);
 });
 
 resetButton.addEventListener("click", resetGame);
 
+setCopyrightYear();
 updateDisplay();
