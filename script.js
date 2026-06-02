@@ -2,6 +2,23 @@ const MAX_ROUNDS = 5;
 
 const moves = ["rock", "paper", "scissors"];
 
+let score = {
+    human: 0,
+    computer: 0,
+};
+
+let currentRound = 1;
+let gameOver = false;
+
+const humanScoreElement = document.querySelector("#human-score");
+const computerScoreElement = document.querySelector("#computer-score");
+const roundNumberElement = document.querySelector("#round-number");
+const gameMessageElement = document.querySelector("#game-message");
+const humanChoiceDisplay = document.querySelector("#human-choice-display");
+const computerChoiceDisplay = document.querySelector("#computer-choice-display");
+const moveButtons = document.querySelectorAll(".move-button");
+const resetButton = document.querySelector("#reset-button");
+
 function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * moves.length);
     return moves[randomIndex];
@@ -40,7 +57,7 @@ function playRound(humanChoice, currentScore) {
 
     const winner = getRoundWinner(humanChoice, computerChoice);
 
-    let newScore = {
+    const newScore = {
         human: currentScore.human,
         computer: currentScore.computer,
     };
@@ -66,11 +83,11 @@ function getRoundMessage(humanChoice, computerChoice, winner) {
         return `It's a tie! Both chose ${humanChoice}.`;
     }
 
-    if (winner === "human") {
-        return `You win! ${humanChoice} beats ${computerChoice}.`;
-    }
+if (winner === "human") {
+    return `You win! ${humanChoice} beats ${computerChoice}.`;
+}
 
-    return `You lose! ${computerChoice} beats ${humanChoice}.`;
+return `You lose! ${computerChoice} beats ${humanChoice}.`;
 }
 
 function getGameWinner(score) {
@@ -84,3 +101,93 @@ function getGameWinner(score) {
 
     return "tie";
 }
+
+function capitalizeWord(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+function updateDisplay(roundResult) {
+    humanScoreElement.textContent = score.human;
+    computerScoreElement.textContent = score.computer;
+    roundNumberElement.textContent = currentRound;
+
+    if (roundResult) {
+        humanChoiceDisplay.textContent = capitalizeWord(roundResult.humanChoice);
+        computerChoiceDisplay.textContent = capitalizeWord(roundResult.computerChoice);
+        gameMessageElement.textContent = roundResult.message;
+    } else {
+        humanChoiceDisplay.textContent = "Empty";
+        computerChoiceDisplay.textContent = "Empty";
+        gameMessageElement.textContent = "Choose your move!";
+    }
+}
+
+function finishGame() {
+    const gameWinner = getGameWinner(score);
+
+    gameOver = true;
+
+    moveButtons.forEach((button) => {
+        button.disabled = true;
+    });
+
+    gameMessageElement.classList.add("final-message");
+
+    if (gameWinner === "human") {
+        gameMessageElement.textContent = `Game over! You win ${score.human} to ${score.computer}!`;
+    } else if (gameWinner === "computer") {
+        gameMessageElement.textContent = `Game over! AI wins ${score.computer} to ${score.human}.`;
+    } else {
+        gameMessageElement.textContent = `Game over! It's a tie, ${score.human} to ${score.computer}.`;
+    }
+}
+
+function handleMoveClick(event) {
+    if (gameOver) {
+        return;
+    }
+
+    const selectedMove = event.currentTarget.dataset.choice;
+    const roundResult = playRound(selectedMove, score);
+
+    if (!roundResult.isValid) {
+        gameMessageElement.textContent = roundResult.message;
+        return;
+    }
+
+    score = roundResult.score;
+    updateDisplay(roundResult);
+
+    if (currentRound >= MAX_ROUNDS) {
+        finishGame();
+    } else {
+        currentRound++;
+        roundNumberElement.textContent = currentRound;
+    }
+}
+
+function resetGame() {
+    score = {
+        human: 0,
+        computer: 0,
+    };
+
+    currentRound = 1;
+    gameOver = false;
+
+    moveButtons.forEach((button) => {
+        button.disabled = false;
+    });
+
+    gameMessageElement.classList.remove("final-message");
+
+    updateDisplay();
+}
+
+moveButtons.forEach((button) => {
+    button.addEventListener("click", handleMoveClick);
+});
+
+resetButton.addEventListener("click", resetGame);
+
+updateDisplay();
