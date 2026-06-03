@@ -500,6 +500,17 @@ button {
     .site-footer {
         font-size: 0.78rem;
         padding-inline: 14px;
+        gap: 10px;
+    }
+        
+    .github-link {
+        width: 30px;
+        height: 30px;
+    }
+        
+    .github-icon {
+        width: 17px;
+        height: 17px;
     }
 }
 
@@ -521,6 +532,12 @@ button {
     box-shadow:
         0 0 14px rgba(101, 255, 154, 0.18),
         inset 0 0 12px rgba(255, 255, 255, 0.06);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .site-footer p {
@@ -529,4 +546,33 @@ button {
 
 #copyright-year {
     color: var(--gold);
+}
+
+.github-link {
+    width: 32px;
+    height: 32px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--gold);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(243, 200, 95, 0.45);
+    transition: transform 160ms ease, filter 160ms ease, background 160ms ease;
+}
+
+.github-link:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.15);
+    background: rgba(243, 200, 95, 0.18);
+}
+
+.github-link:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+.github-icon {
+    width: 19px;
+    height: 19px;
+    fill: currentColor;
 }
