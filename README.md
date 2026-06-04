@@ -1,4 +1,5 @@
-# TOP Rock Paper Scissors Project
+# Rock Paper Scissors Project
+<img width="1919" height="934" alt="Screenshot_2026-06-04_23-26-11" src="https://github.com/user-attachments/assets/c7fb14c4-52b6-475b-9d94-3e1308eb6673" />
 
 # Solar RPS
 
