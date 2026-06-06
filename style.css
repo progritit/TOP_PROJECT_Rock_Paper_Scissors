@@ -514,6 +514,44 @@ button {
     }
 }
 
+.social-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    color: #ffffff;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+
+    text-decoration: none;
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.social-icon {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+.social-link:hover {
+    color: #111111;
+    background-color: #ffffff;
+    transform: translateY(-3px);
+}
+
 /* Project footer reuses the same pill style as the rules footer. */
 .site-footer {
     position: relative;
