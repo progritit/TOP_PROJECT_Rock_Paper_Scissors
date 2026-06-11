@@ -1,12 +1,12 @@
-# Rock Paper Scissors Project
-https://progritit.github.io/TOP_PROJECT_Rock_Paper_Scissors/
-<img width="1919" height="934" alt="Screenshot_2026-06-04_23-26-11" src="https://github.com/user-attachments/assets/c7fb14c4-52b6-475b-9d94-3e1308eb6673" />
-
 # Solar RPS
 
-A solarpunk-themed Rock Paper Scissors game built with HTML, CSS, and JavaScript.
+[Live Demo](https://progritit.github.io/TOP_PROJECT_Rock_Paper_Scissors/)
 
-This project was developed as part of The Odin Project Foundations curriculum and redesigned into a visually polished browser game focused on DOM manipulation, event handling, responsive UI design, and beginner-friendly JavaScript logic.
+<img width="1919" height="934" alt="Solar RPS preview" src="https://github.com/user-attachments/assets/c7fb14c4-52b6-475b-9d94-3e1308eb6673" />
+
+A browser-based Rock Paper Scissors game built with HTML, CSS, and JavaScript.
+
+This project was developed as part of **The Odin Project Foundations** curriculum and later refined into a visually polished web game focused on DOM manipulation, event handling, game state management, responsive UI design, and beginner-friendly JavaScript logic.
 
 ---
 
@@ -15,7 +15,6 @@ This project was developed as part of The Odin Project Foundations curriculum an
 The application showcases:
 
 * A modern Rock Paper Scissors game interface
-* A solarpunk-inspired visual theme
 * Player versus AI gameplay
 * Interactive Rock, Paper, and Scissors buttons
 * Dynamic score tracking
@@ -25,6 +24,7 @@ The application showcases:
 * Reset game functionality
 * Responsive layout
 * Footer with automatically updated copyright year
+* A bright eco-futuristic visual direction
 
 ---
 
@@ -36,7 +36,10 @@ The application showcases:
 * Flexbox
 * CSS Grid
 * CSS variables
-* AI-generated visual assets
+* DOM manipulation
+* Event listeners
+* Git and GitHub
+* GitHub Pages
 
 ---
 
@@ -46,7 +49,7 @@ The application showcases:
 
 * Semantic HTML structure
 * Responsive web app layout
-* Solarpunk-inspired game dashboard
+* Game dashboard interface
 * Glass-style central game container
 * Scoreboard for Player and AI
 * Round counter
@@ -67,7 +70,7 @@ The application showcases:
 
 ### Design
 
-* Eco-futuristic solarpunk visual direction
+* Eco-futuristic visual direction
 * Green, teal, gold, and cyan color palette
 * Large illustrated game buttons
 * Background image integration
@@ -87,8 +90,8 @@ The application showcases:
 
 ## Project Structure
 
-```
-TOP_PROJECT_Rock_Paper_Scissor/
+```plaintext
+TOP_PROJECT_Rock_Paper_Scissors/
 │
 ├── index.html
 ├── style.css
@@ -107,11 +110,11 @@ TOP_PROJECT_Rock_Paper_Scissor/
 
 ## Design Concept
 
-This version of the project was redesigned around a fictional eco-futuristic game interface named Solar RPS.
+This version of the project was redesigned around a fictional eco-futuristic browser game named **Solar RPS**.
 
-The objective was to create a playful browser game that combines The Odin Project JavaScript fundamentals with a more polished portfolio-style interface.
+The objective was to transform a foundational JavaScript exercise into a more complete portfolio project by combining simple game logic with a polished visual interface.
 
-The visual identity is inspired by solarpunk aesthetics, including:
+The visual identity is inspired by:
 
 * Clean renewable energy themes
 * Green futuristic environments
@@ -120,7 +123,7 @@ The visual identity is inspired by solarpunk aesthetics, including:
 * Bright optimistic colors
 * Nature-inspired UI details
 
-The goal was not to build an advanced production game engine, but to create a simple, understandable, and visually engaging project using foundational web development skills.
+The goal was not to build an advanced game engine, but to create a simple, understandable, and visually engaging browser game using foundational web development skills.
 
 ---
 
@@ -135,8 +138,8 @@ This project helped reinforce:
 * Random choice generation
 * Score tracking
 * Game state management
-* Updating the interface dynamically
-* Writing reusable CSS
+* Dynamic interface updates
+* Reusable CSS structure
 * CSS Grid and Flexbox layout techniques
 * Responsive design principles
 * Working with image assets
@@ -175,13 +178,13 @@ The game needed to stop after a fixed number of rounds.
 
 ### Creating a Beginner-Friendly Visual Interface
 
-The target design was inspired by a highly detailed solarpunk UI reference, but the implementation needed to stay realistic for a Foundations-level project.
+The target design was inspired by a detailed eco-futuristic UI reference, but the implementation needed to stay realistic for a Foundations-level project.
 
 ### Solution
 
 * Used simple HTML sections instead of complex components
-* Created reusable CSS classes for cards, buttons, panels, and footers
-* Used CSS gradients, borders, and shadows to approximate the visual style
+* Created reusable CSS classes for cards, buttons, panels, and footer elements
+* Used CSS gradients, borders, and shadows to approximate the intended visual style
 * Kept the structure readable and maintainable
 
 ---
@@ -206,10 +209,11 @@ Local absolute image paths are not suitable for browser projects or GitHub Pages
 
 * Used relative paths such as:
 
-    <img src="./images/rps_rockbutton.png" alt="Rock">
+```html
+<img src="./images/rps_rockbutton.png" alt="Rock">
+```
 
 * Organized all visual assets inside the project `images/` folder
-
 * Kept filenames simple and portable
 
 ---
@@ -221,50 +225,23 @@ The footer needed to show the current year automatically.
 ### Solution
 
 * Added a footer element with a dedicated year span
-
 * Used JavaScript to get the current year:
 
-  new Date().getFullYear();
+```js
+new Date().getFullYear();
+```
 
 * Updated the footer dynamically when the page loads
 
 ---
 
-## AI-Assisted Workflow
+## Development Workflow
 
-This project was developed using a modern AI-assisted workflow.
+This project was built through a hands-on learning process using HTML, CSS, and JavaScript.
 
-### Tools Used
+AI tools were used as learning and productivity assistants for brainstorming, visual direction, debugging support, and documentation refinement. The final code was reviewed, adapted, tested, and integrated manually, with a focus on understanding the JavaScript logic, DOM interactions, layout structure, and design decisions behind the implementation.
 
-#### ChatGPT
-
-Assisted with:
-
-* HTML structure planning
-* CSS layout and styling
-* JavaScript integration
-* DOM manipulation guidance
-* Responsive design improvements
-* Debugging image and path issues
-* README drafting
-* Portfolio presentation refinement
-
-#### Google Gemini
-
-Assisted with:
-
-* Solarpunk visual concept generation
-* Background image creation
-* Rock, Paper, and Scissors asset generation
-* Logo image generation
-* Visual direction exploration
-* Transparency correction prompts
-
-### Development Approach
-
-AI tools were used as collaborative assistants throughout the project, while implementation decisions, code integration, debugging, customization, and final design direction were handled manually.
-
-This workflow reflects a modern learning process where AI helps accelerate ideation and problem-solving, while the developer remains responsible for understanding and applying the code.
+This workflow reflects a modern approach to learning web development: using available tools strategically while staying responsible for the final result.
 
 ---
 
@@ -282,21 +259,21 @@ Potential future enhancements:
 * Add keyboard controls
 * Improve accessibility with ARIA live regions
 * Optimize image sizes with WebP versions
-* Deploy with GitHub Pages
 * Add a custom favicon
 
 ---
 
 ## Author
 
-Clebson Costa
+**Clebson Costa**
 
-Frontend development student focused on:
+Front-end development student focused on:
 
 * Clean UI implementation
 * Responsive layouts
 * JavaScript fundamentals
-* Modern frontend practices
+* DOM manipulation
+* Modern front-end practices
 * Portfolio-quality projects
 
 ---
@@ -304,9 +281,8 @@ Frontend development student focused on:
 ## Acknowledgements
 
 * The Odin Project
-* ChatGPT for development support and debugging assistance
-* Google Gemini for solarpunk visual generation and creative inspiration
-* The open web development community
+* ChatGPT for learning support, debugging assistance, and documentation refinement
+* Google Gemini for visual direction exploration
 
 ---
 
